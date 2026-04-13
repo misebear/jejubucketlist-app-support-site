@@ -1,0 +1,241 @@
+:root {
+  --bg: #f7f1e8;
+  --panel: rgba(255, 253, 248, 0.92);
+  --ink: #1e1f22;
+  --muted: #5c605c;
+  --line: rgba(40, 44, 41, 0.12);
+  --accent: #d95f39;
+  --accent-deep: #8f2d1f;
+  --mint: #d7e6d7;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --shadow: 0 18px 45px rgba(77, 53, 26, 0.12);
+  --font: "Pretendard Variable", "Pretendard", "Noto Sans KR", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(217, 95, 57, 0.18), transparent 35%),
+    radial-gradient(circle at 85% 10%, rgba(138, 170, 138, 0.24), transparent 28%),
+    linear-gradient(180deg, #f8f5ef 0%, #f1ebe0 100%);
+}
+
+a {
+  color: inherit;
+}
+
+.page-shell {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 80px;
+}
+
+.hero,
+.section,
+.app-section,
+.footer {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -70px;
+  width: 260px;
+  height: 260px;
+  background: linear-gradient(135deg, rgba(217, 95, 57, 0.18), rgba(143, 45, 31, 0.05));
+  border-radius: 50%;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.05;
+}
+
+h1 {
+  font-size: clamp(38px, 5vw, 68px);
+  letter-spacing: -0.04em;
+  max-width: 8ch;
+}
+
+h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-size: 28px;
+  letter-spacing: -0.03em;
+}
+
+.hero-copy,
+.app-section p,
+.footer p {
+  margin: 16px 0 0;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 780px;
+}
+
+.hero-actions {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primary-link,
+.secondary-link,
+.app-card {
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.primary-link,
+.secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.primary-link {
+  background: var(--accent);
+  color: #fffaf4;
+}
+
+.secondary-link {
+  background: transparent;
+  border: 1px solid rgba(30, 31, 34, 0.14);
+}
+
+.primary-link:hover,
+.secondary-link:hover,
+.app-card:hover {
+  transform: translateY(-2px);
+}
+
+.section,
+.app-section,
+.footer {
+  margin-top: 22px;
+  padding: 30px;
+}
+
+.section.compact {
+  background: linear-gradient(135deg, rgba(215, 230, 215, 0.65), rgba(255, 253, 248, 0.92));
+}
+
+.section-heading {
+  margin-bottom: 18px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(30, 31, 34, 0.1);
+  text-decoration: none;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(247, 241, 232, 0.72));
+}
+
+.app-card strong {
+  font-size: 18px;
+}
+
+.app-card span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(30, 31, 34, 0.09);
+  font-weight: 600;
+}
+
+.app-section ul {
+  margin: 18px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.footer {
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    width: min(100% - 20px, 1100px);
+    padding-top: 18px;
+  }
+
+  .hero,
+  .section,
+  .app-section,
+  .footer {
+    padding: 22px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .primary-link,
+  .secondary-link {
+    width: 100%;
+  }
+}
