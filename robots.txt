@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://misebear.github.io/jejubucketlist-app-support-site/sitemap.xml
+Sitemap: https://misebear.github.io/jejubucketlist-app-support-site/apps/rss.xml
